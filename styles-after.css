@@ -5,6 +5,22 @@ body {
   padding: 0;
 }
 
+nav {
+  position: sticky;
+  top: 0;
+  background: white;
+  z-index: 1;
+}
+
+nav input#hamburger {
+  display: none;
+  cursor: pointer;
+}
+
+nav .hamburger_label {
+  display: none;
+}
+
 .navigation ul {
   margin: 0;
   padding: 0;
@@ -15,6 +31,10 @@ body {
   font-weight: 100;
   letter-spacing: 2px;
   padding: 20px;
+  display: inline;
+  -webkit-box-align: center;
+  font-size: 16px;
+  text-transform: uppercase;
 }
 
 .navigation  li.logo {
@@ -117,4 +137,48 @@ p {
   background: white;
   border: 1px solid red;
   color: red;
+}
+
+
+@media (max-width: 768px) {
+  nav .hamburger_label {
+    display: inline-block;
+    cursor: pointer;
+    transform: rotate(90deg);
+    font-size: 36px;
+  }
+  
+  .menu {
+    display: none;
+  }
+
+  nav input#hamburger:checked + .menu {
+    display: block;
+    position: absolute;
+    background: rgba(255, 255, 255, 0.91);
+    top: 42px;
+    left: 0;
+  }
+
+  nav.navigation li {
+    display: block;
+    text-align: left;
+  }
+
+  .navigation {
+    width: 100%;
+  }
+
+  #banner {
+    width: 100%;
+  }
+
+  #main {
+    width: 100%;
+  }
+
+  .share {
+    width: 100%;
+  }
+
 }
